@@ -51,7 +51,12 @@ app.use('/api/patient', PatientRoute)
 app.use('/api/donate', DonationRouter)
 
 
-
+app.use('*', (req, res)=>{
+  res.json({
+    status: 404,
+    message: "Unknown endpoint"
+  })
+})
 
 
 
